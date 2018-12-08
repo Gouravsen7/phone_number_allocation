@@ -1,24 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+Install Ruby with RVM
 
-* Ruby version
+`rvm install 2.5.1`
 
-* System dependencies
+`rvm use 2.5.1 --default`
 
-* Configuration
+Install Bundler
 
-* Database creation
+`gem install bundler`
 
-* Database initialization
+Now you can install gems and setup the DB
 
-* How to run the test suite
+```
+bundle install
+rails db:setup
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Start your server
 
-* Deployment instructions
+`rails s`
 
-* ...
+
+API's-
+  > To assign a number
+
+    request_type: POST
+    URL: localhost:3000/alloted_numbers
+
+    form-data: alloted_number[number](optional)
+               alloted_number[first_name]
+               alloted_number[last_name]
+      
+
+    Example: alloted_number[number] = 9713547127
+             alloted_number[first_name] = Gourav
+             alloted_number[last_name] = Sen
+
+  > To check all alloted numbers
+    request_type: GET
+    URL: localhost:3000/alloted_numbers
